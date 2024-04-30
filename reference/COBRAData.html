@@ -23,7 +23,7 @@ to stratify the performance calculations."><!-- mathjax --><script src="https://
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">iCOBRA</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.31.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.33.0</span>
       </span>
     </div>
 
@@ -81,19 +81,19 @@ to stratify the performance calculations.</p>
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>pval</dt>
+    <dl><dt id="arg-pval">pval<a class="anchor" aria-label="anchor" href="#arg-pval"></a></dt>
 <dd><p>A data frame with features as rows and methods as columns,
 containing nominal p-values. Missing values (<code>NA</code>s) are allowed. The
 row names should be feature names.</p></dd>
 
 
-<dt>padj</dt>
+<dt id="arg-padj">padj<a class="anchor" aria-label="anchor" href="#arg-padj"></a></dt>
 <dd><p>A data frame with features as rows and methods as columns,
 containing adjusted p-values. Missing values (<code>NA</code>s) are allowed. The
 row names should be feature names.</p></dd>
 
 
-<dt>score</dt>
+<dt id="arg-score">score<a class="anchor" aria-label="anchor" href="#arg-score"></a></dt>
 <dd><p>A data frame with features as rows and methods as columns,
 containing generic scores. In case of comparison to a binary truth, larger
 values of the scores should correspond to 'more significant' features.
@@ -101,31 +101,31 @@ Missing values (<code>NA</code>s) are allowed. The row names should be feature
 names.</p></dd>
 
 
-<dt>sval</dt>
+<dt id="arg-sval">sval<a class="anchor" aria-label="anchor" href="#arg-sval"></a></dt>
 <dd><p>A data frame with features as rows and methods as columns,
 containing s-values (analogous to q-values, but for sign errors, see
 Stephens (2017)). Missing values (<code>NA</code>s) are allowed. The row names
 should be feature names.</p></dd>
 
 
-<dt>truth</dt>
+<dt id="arg-truth">truth<a class="anchor" aria-label="anchor" href="#arg-truth"></a></dt>
 <dd><p>A data frame with features as rows columns containing feature
 annotations such as, e.g., binary and continuous truths and additional
 annotations that can be used to stratify the performance calculations. The
 row names should be feature names.</p></dd>
 
 
-<dt>object_to_extend</dt>
+<dt id="arg-object-to-extend">object_to_extend<a class="anchor" aria-label="anchor" href="#arg-object-to-extend"></a></dt>
 <dd><p>A <code>COBRAData</code> object to extend with the
 provided information.</p></dd>
 
 
-<dt>truth_file</dt>
+<dt id="arg-truth-file">truth_file<a class="anchor" aria-label="anchor" href="#arg-truth-file"></a></dt>
 <dd><p>A character string giving the path to a file with true
 labels and other feature annotations.</p></dd>
 
 
-<dt>result_files</dt>
+<dt id="arg-result-files">result_files<a class="anchor" aria-label="anchor" href="#arg-result-files"></a></dt>
 <dd><p>A character vector giving path(s) to file(s) with results
 (p-values, adjusted p-values, s-values, scores) for one or more methods.
 The column names of these files must be of the form "method:measure", where
@@ -133,12 +133,12 @@ measure is one of P, adjP, S or score, depending on what is given in the
 column.</p></dd>
 
 
-<dt>feature_id</dt>
+<dt id="arg-feature-id">feature_id<a class="anchor" aria-label="anchor" href="#arg-feature-id"></a></dt>
 <dd><p>A character string giving the name of the column in the
 truth and result files that encodes the feature identifier.</p></dd>
 
 
-<dt>cobradata</dt>
+<dt id="arg-cobradata">cobradata<a class="anchor" aria-label="anchor" href="#arg-cobradata"></a></dt>
 <dd><p>A <code>COBRAData</code> object</p></dd>
 
 </dl></div>
@@ -205,7 +205,7 @@ are available, the adjusted p-values can be calculated using the
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.9000.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.9.9000.</p>
 </div>
 
       </footer></div>
