@@ -6,8 +6,6 @@ calculate_performance."><!-- mathjax --><script src="https://cdnjs.cloudflare.co
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]--></head><body data-spy="scroll" data-target="#toc">
-    
-
     <div class="container template-reference-topic">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -23,7 +21,6 @@ calculate_performance."><!-- mathjax --><script src="https://cdnjs.cloudflare.co
         <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.33.0</span>
       </span>
     </div>
-
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav"><li>
   <a href="../articles/iCOBRA.html">Get started</a>
@@ -34,15 +31,11 @@ calculate_performance."><!-- mathjax --><script src="https://cdnjs.cloudflare.co
       </ul><ul class="nav navbar-nav navbar-right"><li>
   <a href="https://github.com/csoneson/iCOBRA/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
-     
   </a>
 </li>
       </ul></div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
-
-      
-
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
@@ -50,14 +43,12 @@ calculate_performance."><!-- mathjax --><script src="https://cdnjs.cloudflare.co
     <small class="dont-index">Source: <a href="https://github.com/csoneson/iCOBRA/blob/HEAD/R/COBRAPerformance.R" class="external-link"><code>R/COBRAPerformance.R</code></a></small>
     <div class="hidden name"><code>COBRAPerformance.Rd</code></div>
     </div>
-
     <div class="ref-description">
     <p>The <code>COBRAPerformance</code> class holds various types of calculated
 performance measures. Objects from this class are typically generated from
 <code>COBRAData</code> objects by means of the function
 <code><a href="calculate_performance.html">calculate_performance</a></code>.</p>
     </div>
-
     <div id="ref-usage">
     <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">COBRAPerformance</span><span class="op">(</span></span>
 <span>  fdrtpr <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span><span class="op">)</span>,</span>
@@ -79,119 +70,82 @@ performance measures. Objects from this class are typically generated from
 <span>  scatter <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
-
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt id="arg-fdrtpr">fdrtpr<a class="anchor" aria-label="anchor" href="#arg-fdrtpr"></a></dt>
 <dd><p>A data frame containing observed FDR and TPR values at various
 adjusted p-value thresholds.</p></dd>
-
-
 <dt id="arg-fdrtprcurve">fdrtprcurve<a class="anchor" aria-label="anchor" href="#arg-fdrtprcurve"></a></dt>
 <dd><p>A data frame containing observed FDR and TPR values for a
 (potentially large) number of cutoffs applied to a 'score' (that can be
 p-value, adjusted p-value or a more general score).</p></dd>
-
-
 <dt id="arg-fdrnbr">fdrnbr<a class="anchor" aria-label="anchor" href="#arg-fdrnbr"></a></dt>
 <dd><p>A data frame containing observed FDR and the number of features
 considered to be significant at various adjusted p-value thresholds.</p></dd>
-
-
 <dt id="arg-fdrnbrcurve">fdrnbrcurve<a class="anchor" aria-label="anchor" href="#arg-fdrnbrcurve"></a></dt>
 <dd><p>A data frame containing observed FDR and number of
 features considered to be significant for a (potentially large) number of
 cutoffs applied to a 'score' (that can be p-value, adjusted p-value or a
 more general score).</p></dd>
-
-
 <dt id="arg-fsrnbr">fsrnbr<a class="anchor" aria-label="anchor" href="#arg-fsrnbr"></a></dt>
 <dd><p>A data frame containing observed false sign rate (FSR) and the
 number of features considered to be significant at various s-value
 thresholds</p></dd>
-
-
 <dt id="arg-fsrnbrcurve">fsrnbrcurve<a class="anchor" aria-label="anchor" href="#arg-fsrnbrcurve"></a></dt>
 <dd><p>A data frame containing observed false sign rate (FSR) and
 number of features considered to be significant for a (potentially large)
 number of cutoffs applied to the s-value</p></dd>
-
-
 <dt id="arg-tpr">tpr<a class="anchor" aria-label="anchor" href="#arg-tpr"></a></dt>
 <dd><p>A data frame containing observed TPR values at various adjusted
 p-value thresholds.</p></dd>
-
-
 <dt id="arg-fpr">fpr<a class="anchor" aria-label="anchor" href="#arg-fpr"></a></dt>
 <dd><p>A data frame containing observed FPR values at various adjusted
 p-value thresholds.</p></dd>
-
-
 <dt id="arg-splv">splv<a class="anchor" aria-label="anchor" href="#arg-splv"></a></dt>
 <dd><p>A character string giving the name of the stratification factor,
 "none" if the results are not stratified.</p></dd>
-
-
 <dt id="arg-roc">roc<a class="anchor" aria-label="anchor" href="#arg-roc"></a></dt>
 <dd><p>A data frame containing observed FPR and TPR values  for a
 (potentially large) number of cutoffs applied to a 'score' (that can be
 p-value, adjusted p-value or a more general score), which can be used to
 generate a ROC curve.</p></dd>
-
-
 <dt id="arg-fpc">fpc<a class="anchor" aria-label="anchor" href="#arg-fpc"></a></dt>
 <dd><p>A data frame containing observed numbers of false positive
 findings among the N top-ranked features (ranked by p-values, adjusted
 p-values or more general scores), for a (potentially large) number of Ns,
 which can be used to generate a false positive curve.</p></dd>
-
-
 <dt id="arg-deviation">deviation<a class="anchor" aria-label="anchor" href="#arg-deviation"></a></dt>
 <dd><p>A data frame containing deviations between observed scores
 and true scores.</p></dd>
-
-
 <dt id="arg-onlyshared">onlyshared<a class="anchor" aria-label="anchor" href="#arg-onlyshared"></a></dt>
 <dd><p>A logical value indicating whether only features shared
 between the results and the truth should be retained, or if all features
 present in the truth should be used.</p></dd>
-
-
 <dt id="arg-overlap">overlap<a class="anchor" aria-label="anchor" href="#arg-overlap"></a></dt>
 <dd><p>A data frame or list of data frames with binary values
 indicating, for each of a number of methods and number of features, whether
 the method consider the feature 'positive' (significant, 1) or 'negative'
 (non-significant, 0). If it is a list of data frames, each list element
 corresponds to one level of a stratifying factor.</p></dd>
-
-
 <dt id="arg-maxsplit">maxsplit<a class="anchor" aria-label="anchor" href="#arg-maxsplit"></a></dt>
 <dd><p>A numeric value indicating the largest number of levels to
 retain if the results have been stratified by an annotation.</p></dd>
-
-
 <dt id="arg-corr">corr<a class="anchor" aria-label="anchor" href="#arg-corr"></a></dt>
 <dd><p>A data frame containing observed (Pearson and Spearman)
 correlation values between observed and true scores.</p></dd>
-
-
 <dt id="arg-scatter">scatter<a class="anchor" aria-label="anchor" href="#arg-scatter"></a></dt>
 <dd><p>A data frame containing observed 'scores' (p-values, adjusted
 p-values or more general scores) and true scores, which can be used to
 generate scatter plots.</p></dd>
-
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    
-
 <p>A <code>COBRAPerformance</code> object.</p>
     </div>
     <div id="author">
     <h2>Author</h2>
     <p>Charlotte Soneson</p>
     </div>
-
     <div id="ref-examples">
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co">## Empty COBRAPerformance object</span></span></span>
@@ -255,22 +209,12 @@ generate scatter plots.</p></dd>
     <nav id="toc" data-toggle="toc" class="sticky-top"><h2 data-toc-skip>Contents</h2>
     </nav></div>
 </div>
-
-
       <footer><div class="copyright">
   <p></p><p>Developed by Charlotte Soneson.</p>
 </div>
-
 <div class="pkgdown">
   <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.9.9000.</p>
 </div>
-
       </footer></div>
-
-  
-
-
-  
-
   </body></html>
 

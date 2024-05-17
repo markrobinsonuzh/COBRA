@@ -19,8 +19,6 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
-    
-
     <div class="container template-home">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -36,7 +34,6 @@
         <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.33.0</span>
       </span>
     </div>
-
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
 <li>
@@ -50,7 +47,6 @@
 <li>
   <a href="https://github.com/csoneson/iCOBRA/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
-     
   </a>
 </li>
       </ul>
@@ -60,9 +56,6 @@
 <!--/.container -->
 </div>
 <!--/.navbar -->
-
-      
-
       </header><div class="row">
   <div class="contents col-md-9">
 <div class="section level1">
@@ -88,8 +81,8 @@
 <span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">cobradata_example</span><span class="op">)</span></span></code></pre>
 <p>The function <code><a href="reference/calculate_performance.html">calculate_performance()</a></code> calculates the different performance metrics for a <code>COBRAData</code> object. By default, all performance metrics are calculated, but a subset can be selected using the <code>aspects</code> argument.</p>
 <pre><code><span><span class="va">cobraperf</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/calculate_performance.html">calculate_performance</a></span><span class="op">(</span><span class="va">cobradata_example</span>, binary_truth <span class="op">=</span> <span class="st">"status"</span>,</span>
-<span>                                   cont_truth <span class="op">=</span> <span class="st">"logFC"</span>, </span>
-<span>                                   aspects <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"fdrtpr"</span>, <span class="st">"fdrtprcurve"</span>, </span>
+<span>                                   cont_truth <span class="op">=</span> <span class="st">"logFC"</span>,</span>
+<span>                                   aspects <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"fdrtpr"</span>, <span class="st">"fdrtprcurve"</span>,</span>
 <span>                                               <span class="st">"corr"</span><span class="op">)</span><span class="op">)</span></span></code></pre>
 <p>Next, the performance metrics are prepared for plotting using the <code>prepare_for_plot()</code> function. This function defines colors for the various methods and can also be used for selecting only a subset of the methods for visualization, without having to recalculate the performance metrics.</p>
 <pre><code><span><span class="va">cobraplot</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/prepare_data_for_plot.html">prepare_data_for_plot</a></span><span class="op">(</span><span class="va">cobraperf</span>, colorscheme <span class="op">=</span> <span class="st">"Set2"</span>,</span>
@@ -111,7 +104,6 @@
 </div>
 </div>
   </div>
-
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <div class="links">
 <h2 data-toc-skip>Links</h2>
@@ -121,22 +113,18 @@
 <li><a href="https://github.com/csoneson/iCOBRA/issues" class="external-link">Report a bug</a></li>
 </ul>
 </div>
-
 <div class="license">
 <h2 data-toc-skip>License</h2>
 <ul class="list-unstyled">
 <li>GPL (&gt;=2)</li>
 </ul>
 </div>
-
-
 <div class="citation">
 <h2 data-toc-skip>Citation</h2>
 <ul class="list-unstyled">
 <li><a href="authors.html#citation">Citing iCOBRA</a></li>
 </ul>
 </div>
-
 <div class="developers">
 <h2 data-toc-skip>Developers</h2>
 <ul class="list-unstyled">
@@ -144,29 +132,17 @@
 </ul>
 </div>
 
-
-
   </div>
 </div>
-
-
       <footer><div class="copyright">
   <p></p>
 <p>Developed by Charlotte Soneson.</p>
 </div>
-
 <div class="pkgdown">
   <p></p>
 <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.9.9000.</p>
 </div>
-
       </footer>
 </div>
-
-  
-
-
-  
-
   </body>
 </html>
