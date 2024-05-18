@@ -75,11 +75,7 @@ jobs:
         uses: r-lib/actions/setup-r-dependencies@v2
         with:
           extra-packages: any::rcmdcheck
-        #run: |
-        #  Rscript -e "remotes::install_github('r-hub/sysreqs')"
-        #  sysreqs=$(Rscript -e "cat(sysreqs::sysreq_commands('DESCRIPTION'))")
-        #  sudo -s eval "$sysreqs"
-        #  sudo apt-get update && sudo apt-get -y install libcurl4-openssl-dev libharfbuzz-dev libfribidi-dev
+          pak-version: devel
 
       - name: Install system dependencies (macOS)
         if: runner.os == 'macOS'
