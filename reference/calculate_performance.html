@@ -4,6 +4,8 @@ p-values and scores provided in a COBRAData object."><!-- mathjax --><script src
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]--></head><body data-spy="scroll" data-target="#toc">
+
+
     <div class="container template-reference-topic">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -19,6 +21,7 @@ p-values and scores provided in a COBRAData object."><!-- mathjax --><script src
         <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.33.0</span>
       </span>
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav"><li>
   <a href="../articles/iCOBRA.html">Get started</a>
@@ -29,22 +32,28 @@ p-values and scores provided in a COBRAData object."><!-- mathjax --><script src
       </ul><ul class="nav navbar-nav navbar-right"><li>
   <a href="https://github.com/csoneson/iCOBRA/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
+
   </a>
 </li>
       </ul></div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
+
+
+
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Calculate performance measures</h1>
-    <small class="dont-index">Source: <a href="https://github.com/csoneson/iCOBRA/blob/HEAD/R/calculate_performance.R" class="external-link"><code>R/calculate_performance.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/csoneson/iCOBRA/blob/devel/R/calculate_performance.R" class="external-link"><code>R/calculate_performance.R</code></a></small>
     <div class="hidden name"><code>calculate_performance.Rd</code></div>
     </div>
+
     <div class="ref-description">
     <p>Calculate performance measures from a given collection of p-values, adjusted
 p-values and scores provided in a <code>COBRAData</code> object.</p>
     </div>
+
     <div id="ref-usage">
     <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">calculate_performance</span><span class="op">(</span></span>
 <span>  <span class="va">cobradata</span>,</span>
@@ -64,68 +73,98 @@ p-values and scores provided in a <code>COBRAData</code> object.</p>
 <span>  prefer_pval <span class="op">=</span> <span class="cn">TRUE</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
+
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt id="arg-cobradata">cobradata<a class="anchor" aria-label="anchor" href="#arg-cobradata"></a></dt>
+
+
+<dl><dt id="arg-cobradata">cobradata<a class="anchor" aria-label="anchor" href="#arg-cobradata"></a></dt>
 <dd><p>A <code>COBRAData</code> object.</p></dd>
+
+
 <dt id="arg-binary-truth">binary_truth<a class="anchor" aria-label="anchor" href="#arg-binary-truth"></a></dt>
 <dd><p>A character string giving the name of the column of
 truth(cobradata) that contains the binary truth (true assignment of
 variables into two classes, represented by 0/1).</p></dd>
+
+
 <dt id="arg-cont-truth">cont_truth<a class="anchor" aria-label="anchor" href="#arg-cont-truth"></a></dt>
 <dd><p>A character string giving the name of the column of
 truth(cobradata) that contains the continuous truth (a continuous value
 that the observations can be compared to).</p></dd>
+
+
 <dt id="arg-aspects">aspects<a class="anchor" aria-label="anchor" href="#arg-aspects"></a></dt>
 <dd><p>A character vector giving the types of performance measures
 to calculate. Must be a subset of c("fdrtpr", "fdrtprcurve", "fdrnbr",
 "fdrnbrcurve", "tpr", "fpr", "roc", "fpc", "overlap", "corr", "scatter",
 "deviation", "fsrnbr", "fsrnbrcurve").</p></dd>
+
+
 <dt id="arg-thrs">thrs<a class="anchor" aria-label="anchor" href="#arg-thrs"></a></dt>
 <dd><p>A numeric vector of adjusted p-value thresholds for which to
 calculate the performance measures. Affects "fdrtpr", "fdrnbr", "tpr" and
 "fpr".</p></dd>
+
+
 <dt id="arg-svalthrs">svalthrs<a class="anchor" aria-label="anchor" href="#arg-svalthrs"></a></dt>
 <dd><p>A numeric vector of s-value thresholds for which to calculate
 the FSR. Affects "fsrnbr".</p></dd>
+
+
 <dt id="arg-splv">splv<a class="anchor" aria-label="anchor" href="#arg-splv"></a></dt>
 <dd><p>A character string giving the name of the column of
 truth(cobradata) that will be used to stratify the results. The default
 value is "none", indicating no stratification.</p></dd>
+
+
 <dt id="arg-maxsplit">maxsplit<a class="anchor" aria-label="anchor" href="#arg-maxsplit"></a></dt>
 <dd><p>A numeric value giving the maximal number of categories to
 keep in the stratification. The largest categories containing both positive
 and negative features will be retained. By setting this argument to `Inf`
 or `NA_integer_`, all categories (as well as the order of categories) will
 be retained.</p></dd>
+
+
 <dt id="arg-onlyshared">onlyshared<a class="anchor" aria-label="anchor" href="#arg-onlyshared"></a></dt>
 <dd><p>A logical, indicating whether to only consider features for
 which both the true assignment and a result (p-value, adjusted p-value or
 score) is given. If FALSE, all features contained in the truth table are
 used.</p></dd>
+
+
 <dt id="arg-thr-venn">thr_venn<a class="anchor" aria-label="anchor" href="#arg-thr-venn"></a></dt>
 <dd><p>A numeric value giving the adjusted p-value threshold to use
 to create Venn diagrams (if <code>type_venn</code> is "adjp").</p></dd>
+
+
 <dt id="arg-type-venn">type_venn<a class="anchor" aria-label="anchor" href="#arg-type-venn"></a></dt>
 <dd><p>Either "adjp" or "rank", indicating whether Venn diagrams
 should be constructed based on features with adjusted p-values below a
 certain threshold, or based on the same number of top-ranked features by
 different methods.</p></dd>
+
+
 <dt id="arg-topn-venn">topn_venn<a class="anchor" aria-label="anchor" href="#arg-topn-venn"></a></dt>
 <dd><p>A numeric value giving the number of top-ranked features to
 compare between methods (if <code>type_venn</code> is "rank").</p></dd>
+
+
 <dt id="arg-rank-by-abs">rank_by_abs<a class="anchor" aria-label="anchor" href="#arg-rank-by-abs"></a></dt>
 <dd><p>Whether to take the absolute value of the score before
 using it to rank the variables  for ROC, FPC, FDR/NBR and FDR/TPR curves.</p></dd>
+
+
 <dt id="arg-prefer-pval">prefer_pval<a class="anchor" aria-label="anchor" href="#arg-prefer-pval"></a></dt>
 <dd><p>Whether to preferentially rank variables by p-values or
 adjusted p-values rather than score for ROC and FPC calculations. From
 version 1.5.5, this is the default behaviour. To obtain the behaviour of
 previous versions, set to <code>FALSE</code>.</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-<p>A <code>COBRAPerformance</code> object</p>
+    <p>A <code>COBRAPerformance</code> object</p>
     </div>
     <div id="details">
     <h2>Details</h2>
@@ -151,6 +190,7 @@ results will be calculated.</p>
     <h2>Author</h2>
     <p>Charlotte Soneson</p>
     </div>
+
     <div id="ref-examples">
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">cobradata_example</span><span class="op">)</span></span></span>
@@ -170,12 +210,22 @@ results will be calculated.</p>
     <nav id="toc" data-toggle="toc" class="sticky-top"><h2 data-toc-skip>Contents</h2>
     </nav></div>
 </div>
+
+
       <footer><div class="copyright">
   <p></p><p>Developed by Charlotte Soneson.</p>
 </div>
+
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.9.9000.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.0.9000.</p>
 </div>
+
       </footer></div>
+
+
+
+
+
+
   </body></html>
 
