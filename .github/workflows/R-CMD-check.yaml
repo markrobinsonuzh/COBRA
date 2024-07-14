@@ -104,7 +104,7 @@ jobs:
 
       - name: Upload install log if the build/install/check step fails
         if: always() && (steps.build-install-check.outcome == 'failure')
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: install-log
           path: |
@@ -124,7 +124,7 @@ jobs:
 
       - name: Upload check results
         if: failure()
-        uses: actions/upload-artifact@master
+        uses: actions/upload-artifact@v4
         with:
           name: ${{ runner.os }}-bioc-${{ matrix.config.bioc }}-results
           path: ${{ steps.build-install-check.outputs.check-dir }}
