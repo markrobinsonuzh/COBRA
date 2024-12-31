@@ -21,7 +21,7 @@ also be obtained using the function COBRAData_to_text."><!-- mathjax --><script 
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">iCOBRA</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.35.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.35.1</span>
       </span>
     </div>
 
@@ -61,7 +61,7 @@ also be obtained using the function <code><a href="COBRAData.html">COBRAData_to_
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">COBRAapp</span><span class="op">(</span>cobradata <span class="op">=</span> <span class="cn">NULL</span>, autorun <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">COBRAapp</span><span class="op">(</span>cobradata <span class="op">=</span> <span class="cn">NULL</span>, autorun <span class="op">=</span> <span class="cn">FALSE</span>, addStopButton <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -77,6 +77,11 @@ user can load results from text files.</p></dd>
 <dd><p>A logical indicating whether the app calculations should start
 automatically on launch, or wait for the user to press the 'Start
 calculation!' button.</p></dd>
+
+
+<dt id="arg-addstopbutton">addStopButton<a class="anchor" aria-label="anchor" href="#arg-addstopbutton"></a></dt>
+<dd><p>Logical scalar. If <code>TRUE</code> (default), will add a
+button to stop the app (by calling <code><a href="https://rdrr.io/pkg/shiny/man/stopApp.html" class="external-link">shiny::stopApp</a></code>).</p></dd>
 
 </dl></div>
     <div id="value">
