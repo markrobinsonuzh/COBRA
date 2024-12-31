@@ -11,6 +11,8 @@
 #' @param autorun A logical indicating whether the app calculations should start
 #'   automatically on launch, or wait for the user to press the 'Start
 #'   calculation!' button.
+#' @param addStopButton Logical scalar. If \code{TRUE} (default), will add a
+#'   button to stop the app (by calling \code{shiny::stopApp}).
 #' @author Charlotte Soneson
 #' @return Returns (and runs) an object representing the shiny app.
 #' @import shiny
@@ -24,7 +26,8 @@
 #' if (interactive()) {
 #'   shiny::runApp(app)
 #' }
-COBRAapp <- function(cobradata = NULL, autorun = FALSE) {
+COBRAapp <- function(cobradata = NULL, autorun = FALSE, 
+                     addStopButton = TRUE) {
   ## ------------------------------------------------------------------ ##
   ##                          Define UI                                 ##
   ## ------------------------------------------------------------------ ##
@@ -209,7 +212,7 @@ COBRAapp <- function(cobradata = NULL, autorun = FALSE) {
                            "right", options = list(container = "body"))),
         
         ## Button to close app
-        shiny::actionButton("close_app", "Close app")
+        shiny::uiOutput("close_app_ui")
       ),
 
       ## Outputs
@@ -2255,6 +2258,13 @@ COBRAapp <- function(cobradata = NULL, autorun = FALSE) {
     })
     
     ## Close app
+    output$close_app_ui <- shiny::renderUI({
+      if (addStopButton) {
+        shiny::actionButton("close_app", "Close app")
+      } else {
+        NULL
+      }
+    })
     shiny::observeEvent(input$close_app, {
       shiny::stopApp()
     })

@@ -4,7 +4,7 @@
 \alias{COBRAapp}
 \title{Interactive shiny app to visualize results}
 \usage{
-COBRAapp(cobradata = NULL, autorun = FALSE)
+COBRAapp(cobradata = NULL, autorun = FALSE, addStopButton = TRUE)
 }
 \arguments{
 \item{cobradata}{An (optional) \code{COBRAData} object. If not given, the
@@ -13,6 +13,9 @@ user can load results from text files.}
 \item{autorun}{A logical indicating whether the app calculations should start
 automatically on launch, or wait for the user to press the 'Start
 calculation!' button.}
+
+\item{addStopButton}{Logical scalar. If \code{TRUE} (default), will add a
+button to stop the app (by calling \code{shiny::stopApp}).}
 }
 \value{
 Returns (and runs) an object representing the shiny app.
